@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.bg-container{
+    width: 100vw;
+    height: 100vh;
+    background: url("images/bg.jpg") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.container{
+    position: relative;
+    /* background: red; */
+    border-radius: 100px;
+}
+.bg-container .img-normal-sharingan{
+    width: 200px;
+    height: 200px;
+    background: url("images/sharingan1.png") no-repeat center center;
+    background-size:cover;
+    cursor: pointer;
+    /* background-color: red; */
+    border-radius: 100px;
+    transition: 2s;
+    animation: s 1s linear forwards;
+    z-index: 6;
+}
+
+@keyframes s {
+    0%{
+        transform: rotateZ(0deg);
+        opacity: 0;
+    }
+    100%{
+        transform: rotateZ(360deg);
+        opacity: 1;
+    }
+    
+}
+.bg-container .img-sharingan{
+    width: 200px;
+    height: 200px;
+    background: url("images/sharingan.png") no-repeat center center;
+    background-size:cover;
+    cursor: pointer;
+    /* background-color: red; */
+    border-radius: 100px;
+    transition: 2s;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    animation: k 2s linear forwards;
+}
+@keyframes k {
+    0%{
+        transform: rotateZ(0deg);
+        opacity: 1;
+    }
+    100%{
+        transform: rotateZ(360deg);
+        opacity: 0;
+    }
+    
+}
+
+.container.active .img-normal-sharingan{
+    animation: t 2s linear forwards;
+}
+.container.active .img-sharingan{
+    animation: w 1s linear forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes t {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+    
+}
+
+@keyframes w {
+    0%{
+        transform: rotateZ(0deg);
+        opacity: 0;
+    }
+    100%{
+        transform: rotateZ(360deg);
+        opacity: 1;
+    }
+    
+}
